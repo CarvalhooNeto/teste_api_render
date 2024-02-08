@@ -4,7 +4,7 @@ from flask import Flask, request, Response
 from rossmann.Rossmann import Rossmann 
 
 # loading model
-model = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/model/model_rossman.pkl', 'rb' ) )
+model = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/render_ds_em_producao /model/model_rossman.pkl', 'rb' ) )
 
 # initialize API
 app = Flask( __name__ )
