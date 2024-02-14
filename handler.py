@@ -5,8 +5,10 @@ from rossmann.Rossmann import Rossmann
 import os
 
 # loading model
-home_path =  os.getcwd()
-print( home_path )
+
+diretorio_atual = os.getcwd()
+caminho_arquivo = os.path.join(diretorio_atual, 'model/model_rossman.pkl')
+
 
 # initialize API
 app = Flask( __name__ )
