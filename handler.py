@@ -5,7 +5,7 @@ from rossmann.Rossmann import Rossmann
 import os
 
 # loading model
-home_path =  os.path.dirname(__file__)
+home_path =  os.getcwd()
 print( home_path )
 
 # initialize API
