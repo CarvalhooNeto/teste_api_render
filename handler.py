@@ -8,7 +8,8 @@ import os
 
 diretorio_atual = os.getcwd()
 caminho_arquivo = os.path.join(diretorio_atual, 'model/model_rossman.pkl')
-
+with open(caminho_arquivo, 'rb') as file:
+    model = pickle.load(file)
 
 # initialize API
 app = Flask( __name__ )
