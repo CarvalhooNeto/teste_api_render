@@ -6,8 +6,7 @@ import os
 
 # loading model
 home_path =  os.path.dirname(__file__)
-model_path = os.path.join(home_path, 'model', model_rossman.pkl)
-print( model_path )
+print( home_path )
 
 # initialize API
 app = Flask( __name__ )
