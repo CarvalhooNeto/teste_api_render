@@ -7,7 +7,7 @@ import datetime
 import os
 
 # Criar a classe Rossman contendo todos os processos de transformação e limpeza de dados
-class Rossman( object ):
+class Rossmann( object ):
     
     def __init__( self ):
         
