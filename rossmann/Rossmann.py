@@ -3,18 +3,27 @@ import inflection
 import pandas as pd
 import numpy as np
 import math
-from datetime import datetime, timedelta
+import datetime
+import os
 
 # Criar a classe Rossman contendo todos os processos de transformação e limpeza de dados
-class Rossmann( object ):
+class Rossman( object ):
     
     def __init__( self ):
         
-        self.competition_distance_scaler = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter/competition_distance_scaler.pkl', 'rb') )
-        self.competition_time_month_scaler = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter/competition_time_month_scaler.pkl', 'rb') )
-        self.promo_time_week_scaler = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter/promo_time_week_scaler.pkl', 'rb') )
-        self.year_scaler = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter/year_scaler.pkl', 'rb') )
-        self.store_type_scaler = pickle.load( open( '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter/store_type_scaler.pkl', 'rb') )
+        parameters = ['competition_distance_scaler', 'competition_time_month_scaler', 'promo_time_week_scaler', 'year_scaler', 'store_type_scaler' ]
+        caminho = []
+        for parameter in parameters:
+            
+            diretorio_atual = os.path.dirname( __file__ )
+            caminho_arquivo = os.path.join( diretorio_atual, 'parameter/{}.pkl'.format( parameter ) )
+            caminho.append( caminho_arquivo )
+        
+        self.competition_distance_scaler = pickle.load( open( caminho[0], 'rb') )
+        self.competition_time_month_scaler = pickle.load( open( caminho[1], 'rb') )
+        self.promo_time_week_scaler = pickle.load( open( caminho[2], 'rb') )
+        self.year_scaler = pickle.load( open( caminho[3], 'rb') )
+        self.store_type_scaler = pickle.load( open( caminho[4], 'rb') )
     
     # O parametro Self é usado para acessar atributos e métodos da instância dentro da classe
     def data_cleaning( self, df1 ):
@@ -102,7 +111,7 @@ class Rossmann( object ):
         # Filtering rows and columns
         
         df2 = df2[ df2["open"] != 0 ]
-        cols_drop = ['open', 'promo_interval', 'month_map']
+        cols_drop = [ 'open', 'promo_interval', 'month_map']
         df2 = df2.drop(cols_drop, axis = 1)
 
         return df2
