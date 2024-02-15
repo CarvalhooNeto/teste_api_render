@@ -11,19 +11,15 @@ class Rossmann( object ):
     
     def __init__( self ):
         
-        parameters = ['competition_distance_scaler', 'competition_time_month_scaler', 'promo_time_week_scaler', 'year_scaler', 'store_type_scaler' ]
-        caminho = []
-        for parameter in parameters:
-            
-            diretorio_atual = os.path.dirname( __file__ )
-            caminho_arquivo = os.path.join( diretorio_atual, 'parameter/{}.pkl'.format( parameter ) )
-            caminho.append( caminho_arquivo )
+        def __init__ ( self ):
+            self.home_path = os.path.abspath(r '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao' )
+            self.parameter_path = os.path.abspath(r '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter' )
         
-        self.competition_distance_scaler = pickle.load( open( caminho[0], 'rb') )
-        self.competition_time_month_scaler = pickle.load( open( caminho[1], 'rb') )
-        self.promo_time_week_scaler = pickle.load( open( caminho[2], 'rb') )
-        self.year_scaler = pickle.load( open( caminho[3], 'rb') )
-        self.store_type_scaler = pickle.load( open( caminho[4], 'rb') )
+            self.competition_distance_scaler = pickle.load( open( os.path.join( self.parameter_path, 'competition_distance_scaler.pkl' ) , 'rb') )
+            self.competition_time_month_scaler = pickle.load( open(os.path.join( self.parameter_path,'competition_time_month_scaler.pkl' ) , 'rb') )
+            self.promo_time_week_scaler = pickle.load( open( open(os.path.join( self.parameter_path,'promo_time_week_scaler.pkl' ), 'rb') )
+            self.year_scaler = pickle.load( open( os.path.join( self.parameter_path,'year_scaler.pkl' ), 'rb') )
+            self.store_type_scaler = pickle.load( open(  os.path.join( self.parameter_path,'store_type_scaler.pkl' ), 'rb') )
     
     # O parametro Self é usado para acessar atributos e métodos da instância dentro da classe
     def data_cleaning( self, df1 ):
