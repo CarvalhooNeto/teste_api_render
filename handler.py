@@ -7,7 +7,7 @@ import os
 # loading model
 
 home_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao')
-model_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/model')
+model_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/model/')
 
 model = pickle.load( open( os.path.join( model_path, 'model_rossman.pkl'), 'rb' ) )
 
