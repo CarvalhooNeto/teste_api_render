@@ -12,8 +12,8 @@ class Rossmann( object ):
     def __init__( self ):
         
         def __init__ ( self ):
-            self.home_path = os.path.abspath(r '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao' )
-            self.parameter_path = os.path.abspath(r '/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter' )
+            self.home_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao' )
+            self.parameter_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter' )
         
             self.competition_distance_scaler = pickle.load( open( os.path.join( self.parameter_path, 'competition_distance_scaler.pkl' ) , 'rb') )
             self.competition_time_month_scaler = pickle.load( open(os.path.join( self.parameter_path,'competition_time_month_scaler.pkl' ) , 'rb') )
