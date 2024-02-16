@@ -9,7 +9,7 @@ import os
 home_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao')
 model_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/model')
 
-model = pickle.load( open( os.path.join( model_path, 'model_rossmann.pkl'), 'rb' ) )
+model = pickle.load( open( os.path.join( model_path, 'model_rossman.pkl'), 'rb' ) )
 
 # initialize API
 app = Flask( __name__ )
