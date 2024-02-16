@@ -16,8 +16,8 @@ class Rossmann( object ):
             self.parameter_path = os.path.abspath('/home/aderaldo/estudos/comunidade_ds/DataScience_Em_Producao/parameter' )
         
             self.competition_distance_scaler = pickle.load( open( os.path.join( self.parameter_path, 'competition_distance_scaler.pkl' ) , 'rb') )
-            self.competition_time_month_scaler = pickle.load( open(os.path.join( self.parameter_path,'competition_time_month_scaler.pkl' ) , 'rb') )
-            self.promo_time_week_scaler = pickle.load( open( open(os.path.join( self.parameter_path,'promo_time_week_scaler.pkl' ), 'rb') )
+            self.competition_time_month_scaler = pickle.load( open( os.path.join( self.parameter_path,'competition_time_month_scaler.pkl' ) , 'rb') )
+            self.promo_time_week_scaler = pickle.load( open( os.path.join( self.parameter_path,'promo_time_week_scaler.pkl' ), 'rb') )
             self.year_scaler = pickle.load( open( os.path.join( self.parameter_path,'year_scaler.pkl' ), 'rb') )
             self.store_type_scaler = pickle.load( open(  os.path.join( self.parameter_path,'store_type_scaler.pkl' ), 'rb') )
     
